@@ -31,8 +31,7 @@ Run the following command to clone the repository:
 
 bash
 Copy
-git clone <repository-url>
-Replace <repository-url> with the actual URL of the Git repository.
+git clone <https://github.com/hafash/job_board_app_UI_coding_challenge.git>
 
 # Step 2: Navigate to the Project Directory
 
@@ -40,8 +39,7 @@ After cloning the repository, navigate to the project directory:
 
 bash
 Copy
-cd <project-folder-name>
-Replace <project-folder-name> with the name of the folder where the project was cloned.
+cd <job_board_app>
 
 # Step 3: Install Dependencies
 
@@ -60,7 +58,7 @@ You can run the app on an emulator or a physical device. Follow these steps:
 
 Open Android Studio.
 
-Select Open an Existing Project and navigate to the cloned project folder.
+Select Open an Existing Project and navigate to the cloned project folder(<job_board_app>).
 
 Once the project is loaded, click on the Run button (green play icon) to build and run the app.
 
@@ -68,7 +66,7 @@ Once the project is loaded, click on the Run button (green play icon) to build a
 
 Open VS Code.
 
-Open the cloned project folder.
+Open the <job_board_app> folder.
 
 Press F5 or click on Run > Start Debugging to build and run the app.
 
