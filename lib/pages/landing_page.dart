@@ -103,6 +103,10 @@ class LandingPage extends StatelessWidget {
                         location: 'California, USA',
                         salary: '\$7K/Month',
                         description: 'Job description here...',
+                        logo:
+                            'assets/images/pinterest.png', // ✅ Required parameter added
+                        backgroundImage:
+                            'assets/images/pinterest.png', // ✅ Required parameter added
                       ),
                     ),
                   );
@@ -135,11 +139,14 @@ class LandingPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => JobPage(
-                        title: 'Product Designer',
-                        company: 'Google',
-                        location: 'USA',
-                        salary: '\$5K/Month',
-                        description: 'Job description here...',
+                        title: 'Software Engineer',
+                        company: 'Microsoft',
+                        location: 'Seattle, WA',
+                        salary: '\$8K/Month',
+                        description: 'Exciting opportunity at Microsoft...',
+                        logo: 'assets/images/google.png', // ✅ Required logo
+                        backgroundImage:
+                            'assets/images/microsoft.png', // ✅ Required backgroundImage
                       ),
                     ),
                   );

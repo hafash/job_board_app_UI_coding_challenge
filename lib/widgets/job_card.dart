@@ -1,5 +1,43 @@
 import 'package:flutter/material.dart';
 
+class ResponsiveLayout extends StatelessWidget {
+  final Widget mobileLayout;
+  final Widget desktopLayout;
+  final Widget compactLayout;
+  final Widget expandedLayout;
+
+  ResponsiveLayout({
+    required this.mobileLayout,
+    required this.desktopLayout,
+    required this.compactLayout,
+    required this.expandedLayout,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double width = constraints.maxWidth;
+        double height = constraints.maxHeight;
+
+        if (width < 600) {
+          // Mobile layout
+          return mobileLayout;
+        } else if (height < 600) {
+          // Compact layout for smaller screen height (e.g., small tablets or compact screens)
+          return compactLayout;
+        } else if (width >= 600 && height >= 600) {
+          // Desktop layout for larger screens
+          return desktopLayout;
+        } else {
+          // Expanded layout (if necessary for ultra-large screens)
+          return expandedLayout;
+        }
+      },
+    );
+  }
+}
+
 class JobCard extends StatelessWidget {
   final String company;
   final String companyLogo;
@@ -108,6 +146,63 @@ class JobCard extends StatelessWidget {
             ],
           ],
         ),
+      ),
+    );
+  }
+}
+
+// Linking the ResponsiveLayout with JobCard
+class JobScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveLayout(
+      mobileLayout: JobCard(
+        company: 'Example Company',
+        companyLogo: 'assets/logo.png',
+        location: 'New York, NY',
+        title: 'Software Engineer',
+        type: 'Full-time',
+        salary: '\$120,000',
+        timestamp: '2 hours ago',
+        onTap: () {
+          // Handle apply button press
+        },
+      ),
+      desktopLayout: JobCard(
+        company: 'Example Company',
+        companyLogo: 'assets/logo.png',
+        location: 'New York, NY',
+        title: 'Software Engineer',
+        type: 'Full-time',
+        salary: '\$120,000',
+        timestamp: '2 hours ago',
+        onTap: () {
+          // Handle apply button press
+        },
+      ),
+      compactLayout: JobCard(
+        company: 'Example Company',
+        companyLogo: 'assets/logo.png',
+        location: 'New York, NY',
+        title: 'Software Engineer',
+        type: 'Full-time',
+        salary: '\$120,000',
+        timestamp: '2 hours ago',
+        onTap: () {
+          // Handle apply button press
+        },
+      ),
+      expandedLayout: JobCard(
+        company: 'Example Company',
+        companyLogo: 'assets/logo.png',
+        location: 'New York, NY',
+        title: 'Software Engineer',
+        type: 'Full-time',
+        salary: '\$120,000',
+        timestamp: '2 hours ago',
+        onTap: () {
+          // Handle apply button press
+        },
       ),
     );
   }
